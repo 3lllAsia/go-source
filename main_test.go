@@ -2,9 +2,17 @@ package main
 
 import "testing"
 
-func TestMain(t *testing.T) {
-	message := "Hello Golang"
-	if message == "Hello Golang1" {
-		return
+func TestPalindrome(t *testing.T) {
+	if !IsPalindrome("detartrated") {
+		t.Error(`IsPalindrome("detartrated") = false`)
+	}
+	if !IsPalindrome("kayak") {
+		t.Error(`IsPalindrome("kayak") = false`)
+	}
+}
+
+func TestNonPalindrome(t *testing.T) {
+	if IsPalindrome("palindrome") {
+		t.Error(`IsPalindrome("palindrome") = true`)
 	}
 }
